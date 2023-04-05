@@ -36,5 +36,6 @@ Route::prefix('ecoles')
 Route::prefix('centres')
     ->controller(CentreServicesScolaireController::class)
     ->group(function() {
-       Route::get('/{centre}', 'show');
+        Route::get('/', 'index');
+       Route::get('/{centre}/postes', 'showPostebyCentre');
     });
