@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CentreServicesScolaireCollection;
-use App\Http\Resources\CentreServicesScolaireResource;
 use App\Http\Resources\PosteCollection;
 use App\Models\CentreServicesScolaire;
 use App\Models\Ecole;
@@ -33,6 +32,6 @@ class CentreServicesScolaireController extends Controller
         };
 
         $postes = $ecoles->flatmap($func);
-        return new PosteCollection($postes->all());
+        return new PosteCollection($postes);
     }
 }
