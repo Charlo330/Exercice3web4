@@ -5,10 +5,15 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
+/**
+ * Ressource pour les collections d'écoles.
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class EcoleCollection extends ResourceCollection
 {
     /**
-     * Transform the resource collection into an array.
+     * Transforme la collection de ressource en array
      *
      * @return array<int|string, mixed>
      */

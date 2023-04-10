@@ -3,14 +3,17 @@
 namespace Database\Seeders;
 
 use App\Models\CentreServicesScolaire;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
+/**
+ * Seeder pour la table des centres de services scolaires
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class CentreServicesScolaireSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Execution du seeder
      */
     public function run(): void
     {

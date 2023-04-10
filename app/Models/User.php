@@ -8,14 +8,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Modèle pour les utilisateurs
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Colonnes dont l'utilisateur à le droit de modifier
      *
-     * @var array<int, string>
+     * @var array<int, string> Liste des colonnes
      */
     protected $fillable = [
         'name',
@@ -24,7 +29,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Attributs cachés lors de la sérialization
      *
      * @var array<int, string>
      */
@@ -34,7 +39,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * Liste des attributs à caster
      *
      * @var array<string, string>
      */

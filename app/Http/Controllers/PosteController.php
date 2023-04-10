@@ -8,10 +8,15 @@ use App\Http\Resources\PosteResource;
 use App\Models\Poste;
 use Illuminate\Http\Request;
 
+/**
+ * Controller pour les postes.
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class PosteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Obtenir touts les postes
      */
     public function index() : PosteCollection
     {
@@ -20,7 +25,7 @@ class PosteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Enregistrer un nouveau poste
      */
     public function store(PosteRequest $request) : PosteResource
     {
@@ -29,7 +34,7 @@ class PosteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Obtenir l'informations sur un poste
      */
     public function show(Poste $poste) : PosteResource
     {
@@ -37,7 +42,7 @@ class PosteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Retirer un poste
      */
     public function destroy(Poste $poste) : PosteResource
     {

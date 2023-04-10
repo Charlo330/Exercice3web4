@@ -4,32 +4,37 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Migration pour la creation de la table des centres de services scolaires
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Execution de la migration
      */
     public function up(): void
     {
-        Schema::create('ecoles', function (Blueprint $table) {
+        Schema::create('postes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom',25);
-            $table->unsignedBigInteger('centre_services_scolaire_id');
+            $table->unsignedBigInteger('ecole_id');
+            $table->decimal('charge', 3, 2);
             $table->timestamps();
 
-            $table->foreign('centre_services_scolaire_id')
+            $table->foreign('ecole_id')
                 ->references('id')
-                ->on('centres_services_scolaires')
+                ->on('ecoles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Annuler la migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ecoles');
+        Schema::dropIfExists('postes');
     }
 };

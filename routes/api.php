@@ -39,12 +39,12 @@ Route::prefix('ecoles')
         Route::get('/{ecole}/postes', 'showschoolPost');
     });
 
+
 /**
  * Definition de toutes les routes ayant le prefix centres
  */
 Route::prefix('centres')
     ->controller(CentreServicesScolaireController::class)
     ->group(function() {
-        Route::get('/', 'index');
-       Route::get('/{centre}/postes', 'showPostebyCentre');
+       Route::get('/{centre}', 'show');
     });

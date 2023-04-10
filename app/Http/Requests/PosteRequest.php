@@ -5,10 +5,15 @@ namespace App\Http\Requests;
 use App\Rules\ValidCharge;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Requests pour les postes.
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class PosteRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine si un utilisateur est autorisé d'intéragir avec les postes
      */
     public function authorize(): bool
     {
@@ -16,9 +21,9 @@ class PosteRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Les règles de validations pour un poste
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string> Liste des règles
      */
     public function rules(): array
     {

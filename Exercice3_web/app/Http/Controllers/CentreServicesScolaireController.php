@@ -8,11 +8,16 @@ use App\Models\CentreServicesScolaire;
 use App\Models\Ecole;
 use Illuminate\Http\Request;
 
+/**
+ * Controller pour les centres de services scolaires.
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class CentreServicesScolaireController extends Controller
 {
 
     /**
-     * Display a listing of the resource.
+     * Retourne la liste des centres de services scolaires
      */
     public function index(Request $request) : CentreServicesScolaireCollection
     {
@@ -23,6 +28,13 @@ class CentreServicesScolaireController extends Controller
         return new CentreServicesScolaireCollection($centres);
     }
 
+    /**
+     * Obtenir l'informations sur les postes de toutes les ecoles dans le centre de service scolaire
+     *
+     * @param CentreServicesScolaire $centre Centre a obtenir l'information
+     *
+     * @return PosteCollection La liste des postes
+     */
     public function showPostebyCentre(CentreServicesScolaire $centre) : PosteCollection
     {
         $ecoles = $centre->ecole()->get();

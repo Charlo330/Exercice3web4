@@ -9,10 +9,15 @@ use App\Models\Ecole;
 use App\Models\Poste;
 use Illuminate\Http\Request;
 
+/**
+ * Controller pour les écoles.
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
+ */
 class EcoleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Avoir les informations de toutes les ecoles, pagnier à coup de 10
      */
     public function index() : EcoleCollection
     {
@@ -21,7 +26,7 @@ class EcoleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Obtenir les informations à propos d'une école
      */
     public function show(Ecole $ecole) : EcoleResource
     {
@@ -29,10 +34,10 @@ class EcoleController extends Controller
     }
 
     /**
-     * display the post of the specified school.
+     * Obtenir les informations concernant les postes d'un école
      *
-     * @param Ecole $ecole
-     * @return PosteCollection
+     * @param Ecole $ecole L'école en question
+     * @return PosteCollection Collection des postes dans l'école en paramètre
      */
     public function showschoolPost(Ecole $ecole) : PosteCollection {
         $postes = $ecole->poste()->get();

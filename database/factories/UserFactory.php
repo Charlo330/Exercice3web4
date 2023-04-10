@@ -6,14 +6,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
+ * Factory des centres des écoles
+ *
+ * @author Charles-Antoine Lanthier, Maxime Labrecque
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class UserFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * Definition de la factory
      *
-     * @return array<string, mixed>
+     * @return array<string, mixed> Création des colonnes
      */
     public function definition(): array
     {
